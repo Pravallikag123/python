@@ -23,7 +23,7 @@ INSTALLED_APPS = [
     "StudentApp"
 ]
 #---------------------------------------------------------------------------------------------
-#step 5: Create urls.py in Application folder(StudentApp) and include in project urls
+#step 1: Create urls.py in Application folder(StudentApp) and include in project urls
 
 StudentApp---->rightclick---->newfile---->urls.py and write the following code
 
@@ -35,7 +35,7 @@ urlpatterns=['
           ]
 
 #----------------------------------------------------------------------------------------------
-#step 6: open urls.py in the project folder
+#step 2: open urls.py in the project folder
 from django.contrib import admin
 from django.urls import path,re_path
 from django.conf.urls import include
@@ -45,7 +45,7 @@ urlpatterns = [
     re_path(r'^StudentApp/',include('StudentApp.urls'))
 ]
 #----------------------------------------------------------------------------------------------
-#Step 7: Views.py and define input function
+#Step 3: Views.py and define input function
 
 from django.shortcuts import render
 
@@ -54,7 +54,7 @@ def input(request):
     return render(request,'base.html')
 
 #---------------------------------------------------------------------------------------------
-#Step 8: Creating "templates" folder and within it create "base.html"
+#Step 4: Creating "templates" folder and within it create "base.html"
 
 myproj7(outer folder)---->right click----->newfolder---->"templates"
 
@@ -80,7 +80,7 @@ myproj7(outer folder)---->right click----->newfolder---->"templates"
   </html>
 
 #---------------------------------------------------------------------------------------------
-#Step 9: Goto views.py and define compute function
+#Step 5: Goto views.py and define compute function
 from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
@@ -109,7 +109,7 @@ def compute(request):
 
 
 #----------------------------------------------------------------------------------------------
-#Step 10: Adding templates folder path to settings.py
+#Step 6: Adding templates folder path to settings.py
 
 import os
 TEMPLATE_DIR=os.path.join(BASE_DIR,'templates')  #add this after BASE_DIR
@@ -120,29 +120,29 @@ TEMPLATES = [
         "DIRS": [TEMPLATE_DIR],
 
 #---------------------------------------------------------------------------------------------
-#step 11: migrate
+#step7: migrate
 
 (myvenv) C:\Djangoapps\myproj7>py manage.py migrate
 
 #--------------------------------------------------------------------------------------------
-#step 12: runserver
+#step 8: runserver
 
 (myvenv) C:\Djangoapps\myproj7>py manage.py runserver
 
 #------------------------------------------------------------------------------------------
-#step 13: Giving request
+#step 9: Giving request
 
 http://127.0.0.1:8000/StudentApp/
 
 STUDENT DETAILS
 ENTER STUDENT NAME:
-Ajay
+s
 ENTER STUDENT ROLLNO:
-501
+50
 ENTER STUDENT BRANCH:
 CSE
 ENTER STUDENT COLLEGE:
-JNTU
+por
 ENTER MARKS OF MATHS:
 90
 ENTER MARKS OF PHYSICS:
