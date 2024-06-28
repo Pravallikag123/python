@@ -10,43 +10,9 @@ College:............
 Enter marks of Maths :
 Enter marks of Physics:
 Enter marks of Chemistry:
-        SUBMIT  RESET
-
-#Process :  Browser---->give req--------->urls.py(project)----->urls.py(Application)(empty)--->
-#           views(input)------>base.html(templates)----->Submit form---->urls.py(Application)
-#--------->views(compute)----->displays  all details  and computing tot and avg and gives
-#         response
-Project Name: myproj7
+        
 Application Name:StudentApp
 
-
-#Step 1: Activate Virtual Environment
-C:\Users\DELL>cd\
-
-C:\>cd djangoapps\myvenev\scripts
-The system cannot find the path specified.
-
-C:\>cd djangoapps\myvenv\scripts
-
-C:\Djangoapps\myvenv\Scripts>.\activate
-
-(myvenv) C:\Djangoapps\myvenv\Scripts>cd..
-
-(myvenv) C:\Djangoapps\myvenv>cd..
-#---------------------------------------------------------------------------------------------
-#Step 2:Creating or starting a project
-(myvenv) C:\Djangoapps>django-admin startproject myproj7
-
-(myvenv) C:\Djangoapps>cd myproj7
-
-(myvenv) C:\Djangoapps\myproj7>
-
-#---------------------------------------------------------------------------------------------
-#step 3: Creating or staring a Application
-(myvenv) C:\Djangoapps\myproj7>py manage.py startapp StudentApp
-
-#---------------------------------------------------------------------------------------------
-#Step 4: Goto settings.py and add "StudentApp" to the installed apps
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
