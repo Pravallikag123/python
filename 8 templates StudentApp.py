@@ -154,7 +154,7 @@ ENTER MARKS OF CHEMISTRY:
 
 
 #Note: for get request, we can see all the details entered within the browser window
-http://127.0.0.1:8000/StudentApp/comp?t1=Ajay&t2=501&t3=CSE&t4=JNTU&t5=90&t6=50&t7=80
+http://127.0.0.1:8000/StudentApp/comp?t1=s&t2=50&t3=CSE&t4=por&t5=90&t6=50&t7=80
 
 
 
