@@ -1,24 +1,8 @@
 #VideoApp
 #Uploading and playing a VideoFile
-#Step 1: Activate the Virtual Environment
+py manage.py startapp VideoApp
 
-C:\djangoapps2\myvenv\Scripts>.\activate
-
-(myvenv) C:\djangoapps2\myvenv\Scripts>cd..
-
-(myvenv) C:\djangoapps2\myvenv>cd..
-#----------------------------------------------------------------------------------------------
-#step 2: Creating a Project
-(myvenv) C:\djangoapps2>django-admin startproject myproj33
-
-(myvenv) C:\djangoapps2>cd myproj33
-
-#---------------------------------------------------------------------------------------------
-#Step 3: Creating an Application
-(myvenv) C:\djangoapps2\myproj33>py manage.py startapp VideoApp
-
-#--------------------------------------------------------------------------------------------
-#step 4: Settings.py , adding application to settings.py
+ Settings.py , adding application to settings.py
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -28,23 +12,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'VideoApp'
 ]
-#---------------------------------------------------------------------------------------------------
-#step 5:
-#goto chrome--------->say "django embed video
------->django embed video pypi------>pip install django-embed-video
-
-(myvenv) C:\djangoapps2\myproj33>pip install django-embed-video
-
-
-click the documentation------------>django embed video---->
-withinthin the documentation----->click installation -->
-and follow the installation steps
-
-#-----------------------------------------------------------------------------------------------
-#step 6:
 
 #Add 'embed_video' to installed apps
-
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -57,11 +26,7 @@ INSTALLED_APPS = [
     'embed_video'
 ]
 
-#----------------------------------------------------------------------------------------------
-#step 7: Models.py
-
-#In the documentation----->click next ----->goto model ecamples---->copy the following
-#and paste in Models.py
+Models.py
 
 from django.db import models
 from embed_video.fields import EmbedVideoField
@@ -69,10 +34,7 @@ from embed_video.fields import EmbedVideoField
 class Item(models.Model):
     video = EmbedVideoField()  # same like models.URLField()
 
-#---------------------------------------------------------------------------------------------
-#step 8:admin.py
-
-#in documentation -------->copy the code within ----->Admin mixin examples   
+admin.py 
 from django.contrib import admin
 from embed_video.admin import AdminVideoMixin
 from .models import Item
@@ -80,9 +42,7 @@ from .models import Item
 class MyModelAdmin(AdminVideoMixin, admin.ModelAdmin):
     pass
 
-admin.site.register(Item, MyModelAdmin)
-#----------------------------------------------------------------------------------------------
-#step 9: views.py
+views.py
 
 from django.shortcuts import render
 from .models import Item
@@ -91,22 +51,8 @@ def input(request):
     obj=Item.objects.all()
     return render(request,'base.html',{'obj':obj})
 
-#---------------------------------------------------------------------------------------------
-#step 10: base.html
 
-create---->templates folder---->create base.html file
-
-Goto-->getbootstrap.com---->all releases--->select version 4.5---->
-copy starter template and paste in base.html
-
-in django embed documentation ------->Goto templates examples---->copy the tag---->
-{% load embed_video_tags %}
-
-add this to base.html
-
-and within the body change the code as
-
-
+ base.html
 {% load embed_video_tags %}
 <!doctype html>
 <html lang="en">
@@ -140,8 +86,7 @@ and within the body change the code as
   </body>
 </html>
 
-#---------------------------------------------------------------------------------------------
-#step 11: goto settings.py and add Template folder
+ goto settings.py and add Template folder
 
 import os
 
@@ -151,8 +96,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [TEMPLATE_DIR],
-#-----------------------------------------------------------------------------------------------
-#step 12: Application urls.py
+ Application urls.py
 
 from django.urls import re_path
 from VideoApp import views
@@ -160,8 +104,7 @@ urlpatterns=[
      re_path('',views.input)
 ]
 
-#----------------------------------------------------------------------------------------------
-#step 13:project urls.py
+project urls.py
 
 from django.contrib import admin
 from django.urls import path
@@ -171,43 +114,39 @@ urlpatterns = [
     url('',include('VideoApp.urls'))
 ]
 
-#--------------------------------------------------------------------------------------------
-#step 14: makemigrations
+: makemigrations
 
-(myvenv) C:\djangoapps2\myproj33>py manage.py makemigrations
+py manage.py makemigrations
 Migrations for 'VideoApp':
   VideoApp\migrations\0001_initial.py
     - Create model Item
-#---------------------------------------------------------------------------------------------
-#step 15: migrate
-(myvenv) C:\djangoapps2\myproj33>py manage.py migrate
+migrate
+py manage.py migrate
 
-#---------------------------------------------------------------------------------------------
-#step 16: create superuser
+---------------------------------------------------------------------------------------------
+: create superuser
 
-(myvenv) C:\djangoapps2\myproj33>py manage.py createsuperuser
-Username (leave blank to use 'dell'): vijay
-Email address: vijaysundertrainings@gmail.com
+py manage.py createsuperuser
+Username : vijay
+Email address: @gmail.com
 Password:
 Password (again):
 Superuser created successfully.
 
-#--------------------------------------------------------------------------------------------
-#step 17:runserver:
-
-(myvenv) C:\djangoapps2\myproj33>py manage.py runserver
-#------------------------------------------------------------------------------------------
-#step 18: open admin interface:
+-------------------------------------------------------------------------------------------
+:runserver:
+py manage.py runserver
+-----------------------------------------------------------------------------------------
+: open admin interface:
 http://127.0.0.1:8000/admin
 provide username and password
 
-open admin interface---->add item--------->add a video url from youtube---->save
+
 
 give a request:
 #http://127.0.0.1:8000
 we can play the video here
-
-#----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
 
 
 
