@@ -1,8 +1,7 @@
 #VideoApp
 #Uploading and playing a VideoFile
-py manage.py startapp VideoApp
 
- Settings.py , adding application to settings.py
+ 
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -114,39 +113,7 @@ urlpatterns = [
     url('',include('VideoApp.urls'))
 ]
 
-: makemigrations
 
-py manage.py makemigrations
-Migrations for 'VideoApp':
-  VideoApp\migrations\0001_initial.py
-    - Create model Item
-migrate
-py manage.py migrate
-
----------------------------------------------------------------------------------------------
-: create superuser
-
-py manage.py createsuperuser
-Username : vijay
-Email address: @gmail.com
-Password:
-Password (again):
-Superuser created successfully.
-
--------------------------------------------------------------------------------------------
-:runserver:
-py manage.py runserver
------------------------------------------------------------------------------------------
-: open admin interface:
-http://127.0.0.1:8000/admin
-provide username and password
-
-
-
-give a request:
-#http://127.0.0.1:8000
-we can play the video here
----------------------------------------------------------------------------------------------
 
 
 
