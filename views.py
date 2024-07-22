@@ -1,7 +1,6 @@
-from django.shortcuts import render,HttpResponse
-import pyjokes
-# Create your views here.
+from django.shortcuts import render
+from django.shortcuts import HttpResponse
 
-def home(request):
-	joke=pyjokes.get_joke()
-	return render(request,"main/index.html",{"joke":joke})
+# Create your views here.
+def my_index_page(request):
+  return HttpResponse("hello welcome to my index page")
